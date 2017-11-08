@@ -26,13 +26,27 @@ public class BankAccount {
         } else System.out.println("Transaction failed, minimum is IDR 50.000");
     }
 
+
+
     void transfer(BankAccount account, double amount) {
         double tax = amount * 0.05;
         widthdraw((tax + amount));
         account.deposit(amount);
-        System.out.println("Transfered IDR: " + amount);
+        System.out.println("Transferred IDR: " + amount + " to ACCOUNT NUMBER: " + account.getAccountNumber() +" NAME: "+ account.getName() + "\nCurrent balance: IDR " + getBalance());
 
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 }
 
